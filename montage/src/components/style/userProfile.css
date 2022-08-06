@@ -1,11 +1,119 @@
 .UserProfile {
-  position: absolute;
-  top: 100px;
-  left: 100px;
+  background-color: #ffeecd;
 }
 
-.post {
+.profileUserInformation {
+    position: relative;
+    height: auto;
+}
+
+.ProfileImage {
+  margin-left: -180px;
+}
+
+.ProfileImage:hover #profileUploadText {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.ProfileImage:hover #profileUploadLabel {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profileAvatar {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 30px;
+}
+
+#profileUploadLabel {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.0);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    margin-top: -155px;
+}
+
+#profileUploadText {
+    position: relative;
+    color: rgba(255, 255, 255, 0.0);
+    font-size: 20px;
+    margin-left: 40px;
+    top: 60px;
+}
+
+.profileInformation {
+    position: relative;
+}
+
+.profileName {
+  margin-left: 30px;
+  font-size: 30px;
+  margin-top: -120px;
+}
+
+.profileEmail {
+  margin-left: 30px;
+  font-size: 30px;
+  margin-top: -20px;
+}
+
+.profileFavouriteMovie {
+    display: flex;
+}
+
+.display_title {
+  display: absolute;
+  margin-left: -300px;
+  font-size: 30px;
+  margin-top: -10px;
+}
+
+.profileFavouriteMovieCard {
+    position: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    cursor: pointer;
+}
+
+.profileFavouriteMovieTitle {
+    position: relative;
+    max-width: 150px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    font-size: 20px;
+    margin-left: -230px;
+    font-weight: bold;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.img-wrapper-User {
   position: relative;
-  height: 280px;
-  width: 210px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  cursor: pointer;
+  margin-left: -17rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.img-wrapper-User > img {
+  display: block;
+  height: 340px;
+  width: 240px;
+  border-radius: 1.8rem;
+  margin-left: 2rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-wrapper-User:hover > img.zoom {
+  transform: scale(1.1);
 }

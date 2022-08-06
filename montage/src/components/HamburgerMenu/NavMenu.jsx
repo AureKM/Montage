@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import {useSelector, useDispatch} from 'react-redux';
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import {useNavigate} from 'react-router-dom';
-import axios from "axios";
 import {updateLoginState} from "../../actions/index";
+import {getMoviesAsync} from "../../reducers/movies/thunks";
 
 const NavMenuContainer = styled.div`
   width: 100%;
@@ -63,11 +63,11 @@ const variants = {
 
 export function NavMenu({isOpen}) {
   const dispatch = useDispatch();
-  const profileData = useSelector(state => state.others.profile.data);
+  const profileData = useSelector(state => state.persistReducer.profile.data);
   const navigate = useNavigate();
-  const userId = useSelector(state => state.others.userIdReducer.uid);
-  const userLoginState = useSelector(state => state.others.userIdReducer.isLogin);
-  const userState = useSelector(state => state.others.userIdReducer);
+  const userId = useSelector(state => state.persistReducer.userIdReducer.uid);
+  const userLoginState = useSelector(state => state.persistReducer.userIdReducer.isLogin);
+  const userState = useSelector(state => state.persistReducer.userIdReducer);
 
   let adminDisplay = "none";
 
@@ -96,8 +96,6 @@ export function NavMenu({isOpen}) {
       jumpToMain();
     })
   };
-
-  console.log(userState);
 
   return (
     <NavMenuContainer>
